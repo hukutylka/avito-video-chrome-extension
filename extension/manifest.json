@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Avito Video Saver — Audio",
+  "version": "1.2.0",
+  "description": "Скачивает доступные видео Avito со звуком через локальный FFmpeg.",
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://avito.ru/*",
+    "https://*.avito.ru/*",
+    "http://127.0.0.1:8765/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://avito.ru/*",
+        "https://*.avito.ru/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
